@@ -20,7 +20,7 @@ public partial class DebugWindow
 			GUILayout.Label("Local player: not found", Array.Empty<GUILayoutOption>());
 			return;
 		}
-		GUILayout.Label("=== Class Editor ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Class Editor", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUIStyle guistyle = new GUIStyle(GUI.skin.label)
 		{
 			wordWrap = true
@@ -107,7 +107,7 @@ public partial class DebugWindow
 			return;
 		}
 		Type type = target.GetType();
-		GUILayout.Label("=== " + displayName + " ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label(displayName, this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUILayout.Label(type.FullName, Array.Empty<GUILayoutOption>());
 		NetworkBehaviour networkBehaviour = target as NetworkBehaviour;
 		if (networkBehaviour != null)

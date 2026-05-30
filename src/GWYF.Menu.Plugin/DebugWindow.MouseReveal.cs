@@ -14,18 +14,62 @@ public partial class DebugWindow
 	// Token: 0x06001F60 RID: 8032
 	private void Update()
 	{
+		this.UpdateMenuCursorState();
 		this.UpdateMouseReveal();
+	}
+
+	private void LateUpdate()
+	{
+		this.UpdateMenuCursorState();
 	}
 
 	// Token: 0x06001F61 RID: 8033
 	private void OnDisable()
 	{
+		this.RestoreMenuCursorState();
 		this.RestoreMouseRevealState();
+	}
+
+	private void UpdateMenuCursorState()
+	{
+		if (this.visible)
+		{
+			this.ReleaseCursorForMenu();
+			return;
+		}
+		this.RestoreMenuCursorState();
+	}
+
+	private void ReleaseCursorForMenu()
+	{
+		if (!this.menuCursorActive)
+		{
+			this.menuCursorPreviousVisible = Cursor.visible;
+			this.menuCursorPreviousLockState = Cursor.lockState;
+			this.menuCursorActive = true;
+		}
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+	}
+
+	private void RestoreMenuCursorState()
+	{
+		if (!this.menuCursorActive)
+		{
+			return;
+		}
+		Cursor.visible = this.menuCursorPreviousVisible;
+		Cursor.lockState = this.menuCursorPreviousLockState;
+		this.menuCursorActive = false;
 	}
 
 	// Token: 0x06001F62 RID: 8034
 	private void UpdateMouseReveal()
 	{
+		if (this.visible)
+		{
+			return;
+		}
 		if (this.IsMouseRevealKeyPressed())
 		{
 			if (!this.mouseRevealActive)
@@ -188,6 +232,12 @@ public partial class DebugWindow
 
 	// Token: 0x0400152E RID: 5422
 	private CursorLockMode mouseRevealPreviousLockState;
+
+	private bool menuCursorActive;
+
+	private bool menuCursorPreviousVisible;
+
+	private CursorLockMode menuCursorPreviousLockState;
 }
 
 

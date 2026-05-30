@@ -10,7 +10,7 @@ public partial class DebugWindow
 {
 	private void DrawTeleportTab()
 	{
-		GUILayout.Label("=== Teleport ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Teleport", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUIStyle statusStyle = new GUIStyle(GUI.skin.label)
 		{
 			wordWrap = true

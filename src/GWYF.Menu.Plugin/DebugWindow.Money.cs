@@ -7,7 +7,7 @@ public partial class DebugWindow
 {
 	private void DrawMoneyTab()
 	{
-		GUILayout.Label("=== Money ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Money", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUIStyle statusStyle = new GUIStyle(GUI.skin.label)	
 		{
 			wordWrap = true

@@ -14,7 +14,7 @@ public partial class DebugWindow
 	// Token: 0x06002006 RID: 8198
 	private void DrawTextFeedbackTab()
 	{
-		GUILayout.Label("=== Text Feedback ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Text Feedback", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUIStyle guistyle = new GUIStyle(GUI.skin.label)
 		{
 			wordWrap = true

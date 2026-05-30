@@ -26,7 +26,7 @@ public partial class DebugWindow
 			GUILayout.Label("PlayerOrgans: not found on local player.", Array.Empty<GUILayoutOption>());
 			return;
 		}
-		GUILayout.Label("=== Organ Editor ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Organ Editor", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUIStyle guistyle = new GUIStyle(GUI.skin.label)
 		{
 			wordWrap = true

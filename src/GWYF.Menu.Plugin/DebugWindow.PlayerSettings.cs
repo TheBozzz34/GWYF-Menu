@@ -19,7 +19,7 @@ public partial class DebugWindow
 			GUILayout.Label("PlayerSettings: not found on local player.", Array.Empty<GUILayoutOption>());
 			return;
 		}
-		GUILayout.Label("=== Player Settings ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Player Settings", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUILayout.Space(6f);
 		foreach (FieldInfo fieldInfo in typeof(PlayerSettings).GetFields(BindingFlags.Instance | BindingFlags.Public))
 		{

@@ -8,7 +8,7 @@ public partial class DebugWindow
 {
 	private void DrawItemsTab()
 	{
-		GUILayout.Label("=== Items ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Items", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUIStyle statusStyle = new GUIStyle(GUI.skin.label)
 		{
 			wordWrap = true

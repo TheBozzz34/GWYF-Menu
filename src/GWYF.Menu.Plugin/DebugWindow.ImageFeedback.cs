@@ -14,7 +14,7 @@ public partial class DebugWindow
 	// Token: 0x0600203D RID: 8253
 	private void DrawImageFeedbackTab()
 	{
-		GUILayout.Label("=== Image Feedback ===", Array.Empty<GUILayoutOption>());
+		GUILayout.Label("Image Feedback", this.sectionLabelStyle, Array.Empty<GUILayoutOption>());
 		GUIStyle guistyle = new GUIStyle(GUI.skin.label)
 		{
 			wordWrap = true
