@@ -35,18 +35,11 @@ public partial class DebugWindow : MonoBehaviour
 	// Token: 0x06001EC2 RID: 7874
 	private void DrawWindow(int id)
 	{
-		GUILayout.BeginHorizontal(Array.Empty<GUILayoutOption>());
-		for (int i = 0; i < DebugWindow.TabNames.Length; i++)
-		{
-			GUIStyle guistyle = ((i == this.activeTab) ? GUI.skin.box : GUI.skin.button);
-			if (GUILayout.Button(DebugWindow.TabNames[i], guistyle, new GUILayoutOption[] { GUILayout.Height(26f) }))
-			{
-				this.activeTab = i;
-			}
-		}
-		GUILayout.EndHorizontal();
+		int tabColumnCount = this.GetTabColumnCount();
+		int tabRowCount = this.GetTabRowCount(tabColumnCount);
+		this.DrawTabBar(tabColumnCount, tabRowCount);
 		GUILayout.Space(4f);
-		float num = (float)GUI.skin.window.padding.vertical + 26f + 4f + 32f + 8f;
+		float num = (float)GUI.skin.window.padding.vertical + (float)tabRowCount * DebugWindow.TabBarHeight + 4f + DebugWindow.FooterHeight + 8f;
 		float num2 = Mathf.Max(60f, this.windowRect.height - num);
 		this.tabScrollPositions[this.activeTab] = GUILayout.BeginScrollView(this.tabScrollPositions[this.activeTab], new GUILayoutOption[] { GUILayout.Height(num2) });
 		switch (this.activeTab)
@@ -64,18 +57,24 @@ public partial class DebugWindow : MonoBehaviour
 			this.DrawMoneyTab();
 			break;
 		case 4:
-			this.DrawScanTab();
+			this.DrawTeleportTab();
 			break;
 		case 5:
-			this.DrawClassEditorTab();
+			this.DrawItemsTab();
 			break;
 		case 6:
-			this.DrawOrgansTab();
+			this.DrawScanTab();
 			break;
 		case 7:
-			this.DrawTextFeedbackTab();
+			this.DrawClassEditorTab();
 			break;
 		case 8:
+			this.DrawOrgansTab();
+			break;
+		case 9:
+			this.DrawTextFeedbackTab();
+			break;
+		case 10:
 			this.DrawImageFeedbackTab();
 			break;
 		}
@@ -86,6 +85,23 @@ public partial class DebugWindow : MonoBehaviour
 			this.visible = false;
 		}
 		GUI.DragWindow(new Rect(0f, 0f, 10000f, 24f));
+	}
+
+	private void DrawTabBar(int tabColumnCount, int tabRowCount)
+	{
+		this.activeTab = Mathf.Clamp(this.activeTab, 0, DebugWindow.TabNames.Length - 1);
+		this.activeTab = GUILayout.SelectionGrid(this.activeTab, DebugWindow.TabNames, tabColumnCount, new GUILayoutOption[] { GUILayout.Height((float)tabRowCount * DebugWindow.TabBarHeight) });
+	}
+
+	private int GetTabColumnCount()
+	{
+		float availableWidth = Mathf.Max(DebugWindow.MinWidth, this.windowRect.width - (float)GUI.skin.window.padding.horizontal);
+		return Mathf.Clamp(Mathf.FloorToInt(availableWidth / DebugWindow.MinTabButtonWidth), 2, DebugWindow.TabNames.Length);
+	}
+
+	private int GetTabRowCount(int tabColumnCount)
+	{
+		return Mathf.CeilToInt((float)DebugWindow.TabNames.Length / (float)Mathf.Max(1, tabColumnCount));
 	}
 
 	// Token: 0x06001EC4 RID: 7876
@@ -255,11 +271,13 @@ public partial class DebugWindow : MonoBehaviour
 	// Token: 0x0400147E RID: 5246
 	private const float FooterHeight = 32f;
 
+	private const float MinTabButtonWidth = 112f;
+
 	// Token: 0x0400147F RID: 5247
 	private int activeTab;
 
 	// Token: 0x04001480 RID: 5248
-	private static readonly string[] TabNames = new string[] { "Info", "Controls", "Player Settings", "Money", "Scan", "Class Editor", "Organs", "Text", "Images" };
+	private static readonly string[] TabNames = new string[] { "Info", "Controls", "Player Settings", "Money", "Teleport", "Items", "Scan", "Class Editor", "Organs", "Text", "Images" };
 
 	// Token: 0x04001481 RID: 5249
 	private readonly Vector2[] tabScrollPositions = new Vector2[DebugWindow.TabNames.Length];
