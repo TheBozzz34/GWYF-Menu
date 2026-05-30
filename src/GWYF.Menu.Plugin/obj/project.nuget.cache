@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iXq1CuWSblo=",
+  "success": true,
+  "projectFilePath": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj",
+  "expectedPackageFiles": [
+    "/tmp/codeql-scratch-355f106c984ac54a/dbs/csharp/working/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/tmp/codeql-scratch-355f106c984ac54a/dbs/csharp/working/packages/microsoft.netframework.referenceassemblies.net472/1.0.3/microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
