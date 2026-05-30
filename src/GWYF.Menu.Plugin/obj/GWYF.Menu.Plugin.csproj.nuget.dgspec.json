@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj": {}
+  },
+  "projects": {
+    "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj",
+        "projectName": "GWYF.Menu",
+        "projectPath": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj",
+        "packagesPath": "/home/runner/.nuget/packages/",
+        "outputPath": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/runner/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "framework": "net472",
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net472": {
+          "framework": "net472",
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.300/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

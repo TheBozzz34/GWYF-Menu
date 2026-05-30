@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rPMvq6oJ+AY=",
+  "success": true,
+  "projectFilePath": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.3/microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
