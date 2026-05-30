@@ -2081,7 +2081,7 @@ public class DebugWindow : MonoBehaviour
 		}
 		if (this.imageFeedbackAddBackground)
 		{
-			gameObject.AddComponent<Image>().color = new Color(0f, 0f, 0f, fullscreen ? 0.82f : 0.65f);
+			gameObject.AddComponent<Image>().color = new Color(0f, 0f, 0f, 1f);
 		}
 		GameObject gameObject2 = new GameObject("Image");
 		gameObject2.transform.SetParent(gameObject.transform, false);
