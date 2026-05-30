@@ -1933,16 +1933,20 @@ public class DebugWindow : MonoBehaviour
 			}
 			else
 			{
-				byte[] array = File.ReadAllBytes(fullPath);
-				Texture2D texture2D = new Texture2D(2, 2, TextureFormat.RGBA32, false);
-				if (!texture2D.LoadImage(array, false))
+				using (global::System.Drawing.Bitmap bitmap = new global::System.Drawing.Bitmap(fullPath))
 				{
-					global::UnityEngine.Object.Destroy(texture2D);
-					this.imageFeedbackStatus = "Unity could not decode that image file.";
-					flag = false;
-				}
-				else
-				{
+					Texture2D texture2D = new Texture2D(bitmap.Width, bitmap.Height, TextureFormat.RGBA32, false);
+					Color32[] array = new Color32[bitmap.Width * bitmap.Height];
+					for (int i = 0; i < bitmap.Height; i++)
+					{
+						for (int j = 0; j < bitmap.Width; j++)
+						{
+							global::System.Drawing.Color pixel = bitmap.GetPixel(j, bitmap.Height - 1 - i);
+							array[i * bitmap.Width + j] = new Color32(pixel.R, pixel.G, pixel.B, pixel.A);
+						}
+					}
+					texture2D.SetPixels32(array);
+					texture2D.Apply(false, false);
 					texture2D.name = "Debug File Image - " + Path.GetFileName(fullPath);
 					this.ClearImageFeedbackFileCache();
 					this.imageFeedbackLoadedFileTexture = texture2D;
