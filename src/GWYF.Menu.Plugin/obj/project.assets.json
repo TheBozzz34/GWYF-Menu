@@ -415,7 +415,7 @@
     ]
   },
   "packageFolders": {
-    "/home/runner/.nuget/packages/": {}
+    "/tmp/codeql-scratch-355f106c984ac54a/dbs/csharp/working/packages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -423,7 +423,7 @@
       "projectUniqueName": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj",
       "projectName": "GWYF.Menu",
       "projectPath": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj",
-      "packagesPath": "/home/runner/.nuget/packages/",
+      "packagesPath": "/tmp/codeql-scratch-355f106c984ac54a/dbs/csharp/working/packages",
       "outputPath": "/tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
