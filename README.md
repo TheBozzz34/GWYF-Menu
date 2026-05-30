@@ -8,7 +8,6 @@
 4. Launch the game.
 5. Press `F8` to toggle the menu.
 
-The plugin hooks `AllPlayersTriggerZone.OnStartClient` via Harmony and creates `__DebugWindow` automatically.
 
 ## Build from source
 You need the game's Unity managed assemblies available.
@@ -20,8 +19,3 @@ $env:BEPINEX_CORE_DIR = "C:\Path\To\Game\BepInEx\core"
 dotnet build .\src\GWYF.Menu.Plugin\GWYF.Menu.Plugin.csproj -c Release
 ```
 
-dotnet build ./src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj -c Release
-```
-
-Output DLL:
-`src/GWYF.Menu.Plugin/bin/Release/net472/GWYF.Menu.dll`
