@@ -61,18 +61,21 @@ public partial class DebugWindow : MonoBehaviour
 			this.DrawPlayerSettingsTab();
 			break;
 		case 3:
-			this.DrawScanTab();
+			this.DrawMoneyTab();
 			break;
 		case 4:
-			this.DrawClassEditorTab();
+			this.DrawScanTab();
 			break;
 		case 5:
-			this.DrawOrgansTab();
+			this.DrawClassEditorTab();
 			break;
 		case 6:
-			this.DrawTextFeedbackTab();
+			this.DrawOrgansTab();
 			break;
 		case 7:
+			this.DrawTextFeedbackTab();
+			break;
+		case 8:
 			this.DrawImageFeedbackTab();
 			break;
 		}
@@ -256,10 +259,10 @@ public partial class DebugWindow : MonoBehaviour
 	private int activeTab;
 
 	// Token: 0x04001480 RID: 5248
-	private static readonly string[] TabNames = new string[] { "Info", "Controls", "Player Settings", "Scan", "Class Editor", "Organs", "Text", "Images" };
+	private static readonly string[] TabNames = new string[] { "Info", "Controls", "Player Settings", "Money", "Scan", "Class Editor", "Organs", "Text", "Images" };
 
 	// Token: 0x04001481 RID: 5249
-	private readonly Vector2[] tabScrollPositions = new Vector2[8];
+	private readonly Vector2[] tabScrollPositions = new Vector2[DebugWindow.TabNames.Length];
 }
 
 

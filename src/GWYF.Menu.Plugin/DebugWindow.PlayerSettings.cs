@@ -41,14 +41,6 @@ public partial class DebugWindow
 		{
 			this.playerSettingInputs.Clear();
 		}
-		if (GUILayout.Button("TryChangeTicketBalance", Array.Empty<GUILayoutOption>()))
-		{
-			NetworkSingleton<MoneyManager>.Instance.TryChangeTicketBalance(1L);
-		}
-		if (GUILayout.Button("TryChangeBalance", Array.Empty<GUILayoutOption>()))
-		{
-			NetworkSingleton<MoneyManager>.Instance.TryChangeBalance(100L, this.playerProfile, ChangeType.Misc);
-		}
 	}
 
 	// Token: 0x06001ECB RID: 7883
