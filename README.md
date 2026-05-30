@@ -1,12 +1,10 @@
 # GWYF Menu
 
-This repository is now set up as a **BepInEx plugin** so players can install the mod without manually patching `Assembly-CSharp.dll` in dnSpy.
-
-## Player install (no binary patching)
+## Player install
 1. Install BepInEx 5 for your game.
 2. Download `GWYF.Menu.dll` from the releases for this repo.
 3. Copy `GWYF.Menu.dll` into:
-   - `<GameFolder>/BepInEx/plugins/GWYF.Menu/`
+   - `<GameFolder>/BepInEx/plugins/GWYFMenu/`
 4. Launch the game.
 5. Press `F8` to toggle the menu.
 
@@ -22,11 +20,7 @@ $env:BEPINEX_CORE_DIR = "C:\Path\To\Game\BepInEx\core"
 dotnet build .\src\GWYF.Menu.Plugin\GWYF.Menu.Plugin.csproj -c Release
 ```
 
-### Any OS
-```bash
-GAME_MANAGED_DIR="/path/to/Game_Data/Managed" \
-BEPINEX_CORE_DIR="/path/to/Game/BepInEx/core" \
-dotnet build /tmp/workspace/TheBozzz34/GWYF-Menu/src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj -c Release
+dotnet build ./src/GWYF.Menu.Plugin/GWYF.Menu.Plugin.csproj -c Release
 ```
 
 Output DLL:
