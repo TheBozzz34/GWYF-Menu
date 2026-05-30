@@ -1,7 +1,7 @@
 # GWYF Menu
 
 ## Player install
-1. Install BepInEx 5 for your game.
+1. Install BepInEx 5 
 2. Download `GWYF.Menu.dll` from the releases for this repo.
 3. Copy `GWYF.Menu.dll` into:
    - `<GameFolder>/BepInEx/plugins/GWYFMenu/`
